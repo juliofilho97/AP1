@@ -19,25 +19,25 @@ class concessionaria
 private:
 	string nome;
 	int cnpj;
-	vector<automovel*> listaConc;
+	vector<automovel *> listaConc;
 
 
 public:
 	static int numeroConc;
 
 	//construtor
-	concessionaria();
+	concessionaria ();
 
 	// destrutor
-	~concessionaria();
+	~concessionaria ();
 
 
-	concessionaria(string nome, int cnpj, const vector <automovel*> listaConc);
+	concessionaria (string nome, int cnpj, const vector <automovel *> listaConc);
 
 	string get_nome();
 	string set_nome();
 	int get_cnpj();
-	int set_CNPJ();
+	int set_cnpj();
 
 	bool add_carro();
 
