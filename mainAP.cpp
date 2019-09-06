@@ -4,11 +4,15 @@
 #include <iterator>
 #include <algorithm>
 
-#include "gerencia.h"
+#include "gerenciar.h"
 #include "automovel.h"
+#include "concessionaria.h"
 
 using namespace std;
-gerencia listaConc
+gerenciar listaConc;
+
+int automovel::numeroCarros = 0;
+int concessionaria::numeroConc = 0;
 
 int main (){
 	int x = -1;
@@ -17,7 +21,6 @@ int main (){
 		<< "1 - Adiconar Automovel "<<endl
 		<< " 2- Criar Concessionaria"<< endl
 		<< "3 - Lista de Automoveis"<< endl
-		<<"4- Autualizar uma Concessionaria"<< endl
 		<< " 0 - Sair"<< endl
 		<< endl<< " Digite sua Escolha: ";
 	
@@ -25,13 +28,13 @@ int main (){
 
 		switch (x){
 			case 1: 
-					listaConc.add_carro();
+					listaConc.cadastrarCarro();
 					break;
 			case 2: 
-					listaConc.criar_conc();
+					listaConc.criarconcessionaria ()();
 					break;
 			case 3:
-					listaConc.lista_carro();
+					listaConc.estoques ();
 			case 0:
 					cout<<endl<< "Ate mais!"<< endl;
 					return 0;
