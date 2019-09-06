@@ -26,7 +26,8 @@ bool gerencia::add_carro(){
 	cout << endl << "Numero do Chassi : ";
 	getline(cin, chassi);
 
-	automovel *func = new automovel(marca,preco,chassi);
+	// Ira conferir apenas o chassi pois o chassi é como se fosse o cpf do carro, é unico
+	automovel *func = new automovel(chassi);
 
 	for (vector<<automovel*> iterator it = listaConc.begin(); it != listaConc.end();it++)
 	{
