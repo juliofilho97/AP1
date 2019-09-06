@@ -8,6 +8,7 @@
 #include <algorithm>
 
 #include "gerenciar.h"
+#include "automovel.h"
 #include "concessionaria.h"
 
 
