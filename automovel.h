@@ -1,28 +1,34 @@
-
-    
-#include <iostream>
-#include <string>
 #ifndef AUTOMOVEL_H
 #define AUTOMOVEL_H
 
+#include <iostream>
+#include <vector>
 #include <string>
+#include <iterator>
+#include <algorithm>
+
+#include "gerencia.h"
+
 
 using namespace std;
 
 class automovel{
 	private: 
 	string marca; 
-	float preco; 
-	int fab_ano;
+	float preco;
+	string chassi; 
+	/*int fab_ano;
 	int fab_dia;
 	int fab_mes;
-
+*/
 //Getters e Setters
 	public: 
 	string getMarca(); 
 	string setMarca(string marca); 
 	float getPreco(); 
 	float setPreco(float preco);
+	string getChassi();
+	string setChassi(string chassi);
 	/* int getFab_ano(); 
 	int setFab_ano(int fa);
 	int getFab_dia(); 
