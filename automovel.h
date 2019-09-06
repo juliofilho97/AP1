@@ -28,7 +28,7 @@ class automovel{
 
 		automovel();
 		automovel(string marca, float preco);
-		~automovel()
+		~automovel ();
 
 		string getMarca(); 
 		string setMarca(string marca); 
@@ -37,7 +37,7 @@ class automovel{
 		string getChassi();
 		string setChassi(string chassi);
 	
-}
+};
 
 
 
