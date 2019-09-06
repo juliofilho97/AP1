@@ -13,10 +13,10 @@ using namespace std;
 concessionaria::concessionaria(){
 
 }
-concessionaria::concessionaria(string nome, int cnpj, const vector<automovel*>listaConc)
+concessionaria::concessionaria(string nome, int cnpj, const vector< automovel *>listaConc)
 {
-	set_Nome(nome);
-	set_CNPJ(cnpj);
+	set_nome(nome);
+	set_cnpj(cnpj);
 	++numeroConc;
 }
 concessionaria::~concessionaria(){
@@ -40,7 +40,7 @@ bool concessionaria::add_carro(){
 	string marca;
 	float preco;
 
-	cout << endl << "-> Digite os dados do carro : "
+	cout << endl << "-> Digite os dados do carro : ";
 
 	cout << endl << "Numero do Chassi : ";
 	getline(cin, chassi);
@@ -48,7 +48,7 @@ bool concessionaria::add_carro(){
 	// Ira conferir apenas o chassi pois o chassi é como se fosse o cpf do carro, é unico
 	automovel *func = new automovel(chassi);
 
-	for (vector<<automovel*> iterator it = listaConc.begin(); it != listaConc.end();it++)
+	for (vector <automove *l> iterator it = listaConc.begin(); it != listaConc.end();it++)
 	{
 		if (**it == *func){
 			cout << endl << "Carro ja cadastrado. Operacao CANCELADA !"<< endl;
