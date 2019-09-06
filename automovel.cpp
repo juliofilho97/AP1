@@ -11,14 +11,13 @@
 using namespace std;
 
 automovel::automovel(){
-		marca = " ";
-		preco = 0;
-		chassi = " ";
-		++numeroCarros;
+	marca = " ";
+	preco = 0;
+	chassi = " ";
+	++numeroCarros;
+}
 
-	}
-
-automovel::automovel( string marca, float preco, string chassi){
+automovel::automovel(string marca, float preco, string chassi){
 	setMarca(marca);
 	setPreco(preco);
 	setChassi(chassi);

@@ -7,12 +7,6 @@
 #include <iterator>
 #include <algorithm>
 
-#include "gerenciar.h"
-#include "automovel.h"
-#include "concessionaria.h"
-
-
-
 using namespace std;
 
 class automovel{
@@ -27,15 +21,18 @@ class automovel{
 		static int numeroCarros;
 
 		automovel();
-		automovel(string marca, float preco);
-		~automovel ();
+		automovel(string marca, float preco, string chassi);
 
 		string getMarca(); 
-		string setMarca(string marca); 
+		string setMarca(string marca_){marca = marca_;} 
 		float getPreco(); 
-		float setPreco(float preco);
+		float setPreco(float preco_){preco = preco_;}
 		string getChassi();
-		string setChassi(string chassi);
+		string setChassi(string chassi_){chassi = chassi_;}
+
+		bool operator==(automovel a){
+			return a.getChassi() == chassi;
+		}
 	
 };
 

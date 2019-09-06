@@ -13,7 +13,7 @@ using namespace std;
 concessionaria::concessionaria(){
 
 }
-concessionaria::concessionaria(string nome, int cnpj, const vector< automovel *>listaConc)
+concessionaria::concessionaria(string nome, int cnpj, const vector< automovel>listaConc)
 {
 	set_nome(nome);
 	set_cnpj(cnpj);
@@ -25,11 +25,11 @@ concessionaria::~concessionaria(){
 }
 
 
-string Empresa::get_nome(){
+string concessionaria::get_nome(){
 	return nome;
 }
 
-int Empresa::get_cnpj(){
+int concessionaria::get_cnpj(){
 	return cnpj;
 }
 
@@ -45,23 +45,24 @@ bool concessionaria::add_carro(){
 	cout << endl << "Numero do Chassi : ";
 	getline(cin, chassi);
 
-	// Ira conferir apenas o chassi pois o chassi é como se fosse o cpf do carro, é unico
-	automovel *func = new automovel(chassi);
+	cout << endl << "Marca : ";
+	getline(cin,marca);
 
-	for (vector <automove *l> iterator it = listaConc.begin(); it != listaConc.end();it++)
+	cout << endl << "Preco : ";	
+	preco=10;
+	//cin >> preco;
+
+	// Ira conferir apenas o chassi pois o chassi é como se fosse o cpf do carro, é unico
+	automovel func = automovel(marca, preco, chassi);
+
+	for (int i = 0; i < listaConc.size(); i++)
 	{
-		if (**it == *func){
+		if (listaConc[i] == func){
 			cout << endl << "Carro ja cadastrado. Operacao CANCELADA !"<< endl;
 			return false;
 			
 		}
 	}
-
-	cout << endl << "Marca : ";
-	getline(cin,marca);
-
-	cout << endl << "Preco : ";	
-	preco = get_int();
 
 	listaConc.push_back(func);
 

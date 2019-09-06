@@ -10,8 +10,6 @@
 
 using namespace std;
 
-
-
 gerenciar::gerenciar(){
 	listaLoja = {}; 
 }
@@ -22,19 +20,19 @@ gerenciar::~gerenciar(){
 concessionaria gerenciar::criarconcessionaria (){
 	string nome;
 	int cnpj;
-	vector <automovel*> listaConc;
+	vector <automovel> listaConc;
 	
 	cout << endl << "Informe o nome da concessionaria : ";
 	getline(cin, nome);
 
 	cout << endl<< "Informe o CNPJ da concessionaria : ";
-	cnpj = get_int();
+	cin >> cnpj; //cnpj = get_int();
 
-	concessionaria *novaConc = new concessionaria(nome,cnpj);
+	concessionaria novaConc = concessionaria(nome,cnpj,listaConc);
 	statusConc status = inexistente;
 
-	for ( vector <concessionaria *>::iterator it = listaLoja.begin();it != listaLoja.end(); ++it){
-		if (**it == *novaConc)
+	for ( int i = 0; i < listaLoja.size(); ++i){
+		if (listaLoja[i] == novaConc)
 		{
 			cout << endl << "concessionaria existente. tente outra vez";
 			status = existe;
@@ -47,7 +45,7 @@ concessionaria gerenciar::criarconcessionaria (){
 			cout<< endl << "concessionaria inaugurada"<< endl;
 
 		}
-	return *novaConc;
+	return novaConc;
 
 
 }
@@ -58,9 +56,9 @@ void gerenciar::cadastrarCarro(){
 	cout << endl << "Deseja cadastrar o carro em qual concessionaria? " <<endl<< "concessionarias:" << endl << endl;
 
 
-	for (vector<concessionaria>::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it)
+	for ( int i = 0; i < listaLoja.size(); ++i)
 	{
-		cout << (**it).get_nome() << endl;
+		cout << listaLoja[i].get_nome() << endl;
 	}
 
 	cout << endl << "Digite a concessionaria: ";
@@ -68,11 +66,11 @@ void gerenciar::cadastrarCarro(){
 	getline(cin,nome);
 	statusConc status = inexistente;
 
-	for (vector<concessionaria * >::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it)
+	for ( int i = 0; i < listaLoja.size(); ++i)
 	{
-		if ( (**it).get_nome() == nome){
+		if ( listaLoja[i].get_nome() == nome){
 			status = existe;
-			if ((**it).cadastrarCarro())
+			if (listaLoja[i].add_carro())
 			{
 				status = carroCadastrado;
 			} 
@@ -96,18 +94,18 @@ bool gerenciar::estoques (){
 
 	cout << endl << "estoque de qual concessionaria quer acessar? " << endl<< "concessionarias:" <<endl << endl;
 			  
-	for (vector<concessionaria>::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it)
+	for ( int i = 0; i < listaLoja.size(); ++i)
 	{
-		cout << (**it).get_nome() << endl;
+		cout << listaLoja[i].get_nome() << endl;
 	}
 	cout << endl << "Digite a concessionaria: ";
 	string nome;
 	getline(cin,nome);
-	for (vector<concessionaria *>::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it)
+	for ( int i = 0; i < listaLoja.size(); ++i)
 	{
-		if ( (**it).get_nome() == nome){
+		if ( listaLoja[i].get_nome() == nome){
 			cout << endl << " O estoque da " << nome << " possui: "<< endl;
-			cout << (**it);
+			//cout << listaLoja[i]; (Implementar a sobrecarga do operador <<)
 			return true;
 		}
 	}

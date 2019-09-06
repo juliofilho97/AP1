@@ -7,7 +7,6 @@
 #include<iterator>
 #include<algorithm>
 
-#include "gerenciar.h"
 #include "automovel.h"
 #include "concessionaria.h"
 
@@ -19,7 +18,7 @@ class concessionaria
 private:
 	string nome;
 	int cnpj;
-	vector<automovel *> listaConc;
+	vector<automovel> listaConc;
 
 
 public:
@@ -32,18 +31,21 @@ public:
 	~concessionaria ();
 
 
-	concessionaria (string nome, int cnpj, const vector <automovel *> listaConc);
+	concessionaria (string nome, int cnpj, const vector <automovel> listaConc);
 
 	string get_nome();
-	string set_nome();
+	void set_nome(string nome_){ nome = nome_; }
 	int get_cnpj();
-	int set_cnpj();
+	int set_cnpj(int cnpj_){ cnpj = cnpj_;}
 
 	bool add_carro();
 
 	bool lista_carro();
 
 	int estoque();
+	bool operator==(concessionaria a){
+		return a.get_cnpj() == cnpj;
+	}
 
 };
 #endif 

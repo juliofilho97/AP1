@@ -24,7 +24,9 @@ int main (){
 		<< " 0 - Sair"<< endl
 		<< endl<< " Digite sua Escolha: ";
 	
-		cin >> x;
+		cin >> x; 
+
+		//ver como faz p parar de pular o cin
 
 		switch (x){
 			case 1: 
