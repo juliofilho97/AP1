@@ -1,16 +1,21 @@
+#include <iostream>
 #include <vector>
 #include <string>
-#include <iostream>
+#include <iterator>
+#include <algorithm>
+
+
+#include "automovel.h"
 
 using namespace std;
 
-enum status_concessionaria
+/*enum status_concessionaria
 {
 	inexistente = 0,
 	existe = 1,
 	carro_cadastrado = 2
 };
-
+*/
 class gerencia
 {
 private:
@@ -25,7 +30,7 @@ public:
 	~gerencia();
 	concessionaria criar_conc();
 
-	void add_carro();
+	bool add_carro();
 
 	bool lista_carro();
 }
