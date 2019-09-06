@@ -16,13 +16,13 @@ enum statusConc
 {
 	inexistente = 0,
 	existe = 1,
-	carro_cadastrado = 2
+	carroCadastrado = 2
 };
 
 class gerenciar
 {
 private: 
-	vector <concessionaria*> listaLoja;
+	vector <concessionaria> listaLoja;
 
 public:
 	gerenciar();
