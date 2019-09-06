@@ -24,14 +24,14 @@ int main (){
 		<< " 0 - Sair"<< endl
 		<< endl<< " Digite sua Escolha: ";
 	
-		int x = get_int();
+		cin >> x;
 
 		switch (x){
 			case 1: 
 					listaConc.cadastrarCarro();
 					break;
 			case 2: 
-					listaConc.criarconcessionaria ()();
+					listaConc.criarconcessionaria ();
 					break;
 			case 3:
 					listaConc.estoques ();
