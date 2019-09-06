@@ -11,17 +11,11 @@ using namespace std;
 
 
 bool gerencia::add_carro(){
+	string chassi;
 	string marca;
 	float preco;
-	string chassi;
 
 	cout << endl << "-> Digite os dados do carro : "
-
-	cout << endl << "Marca : ";
-	getline(cin,marca);
-
-	cout << endl << "Preco : ";	
-	preco = get_int();
 
 	cout << endl << "Numero do Chassi : ";
 	getline(cin, chassi);
@@ -34,8 +28,16 @@ bool gerencia::add_carro(){
 		if (**it == *func){
 			cout << endl << "Carro ja cadastrado. Operacao CANCELADA !"<< endl;
 			return false;
+			
 		}
 	}
+
+	cout << endl << "Marca : ";
+	getline(cin,marca);
+
+	cout << endl << "Preco : ";	
+	preco = get_int();
+
 	listaConc.push_back(func);
 
 	return true;
