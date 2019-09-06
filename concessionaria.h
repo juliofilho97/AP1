@@ -1,12 +1,16 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <iterator>
-#include <algorithm>
+#ifndef CONCESSIONARIA_H
+#define CONCESSIONARIA_H
+
+#include<iostream>
+#include<vector>
+#include<string>
+#include<iterator>
+#include<algorithm>
 
 #include "gerenciar.h"
 #include "automovel.h"
 #include "concessionaria.h"
+
 using namespace std;
 
 
@@ -41,3 +45,5 @@ public:
 
 	int estoque();
 
+};
+#endif 
