@@ -4,8 +4,9 @@
 #include <iterator>
 #include <algorithm>
 
-#include "gerencia.h"
+#include "gerenciar.h"
 #include "automovel.h"
+#include "concessionaria.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ automovel::automovel(){
 		marca = " ";
 		preco = 0;
 		chassi = " ";
+		++numeroCarros;
 
 	}
 
@@ -20,6 +22,7 @@ automovel::automovel( string marca, float preco, string chassi){
 	setMarca(marca);
 	setPreco(preco);
 	setChassi(chassi);
+	++numeroCarros;
 }
 
 string automovel::getMarca(){
