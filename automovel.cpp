@@ -32,6 +32,6 @@ float automovel::getPreco(){
 	return preco;
 }
 
-string automovel::getchassi(){
+string automovel::getChassi(){
 	return chassi;
 }
