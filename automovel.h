@@ -12,7 +12,7 @@ using namespace std;
 class automovel{
 	private: 
 		string marca; 
-		float preco;
+		double preco;
 		string chassi; 
 		
 
@@ -21,12 +21,12 @@ class automovel{
 		static int numeroCarros;
 
 		automovel();
-		automovel(string marca, float preco, string chassi);
+		automovel(string marca, double preco, string chassi);
 
 		string getMarca(); 
 		string setMarca(string marca_){marca = marca_;} 
-		float getPreco(); 
-		float setPreco(float preco_){preco = preco_;}
+		double getPreco(); 
+		double setPreco(double preco_){preco = preco_;}
 		string getChassi();
 		string setChassi(string chassi_){chassi = chassi_;}
 

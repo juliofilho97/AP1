@@ -17,7 +17,7 @@ automovel::automovel(){
 	++numeroCarros;
 }
 
-automovel::automovel(string marca, float preco, string chassi){
+automovel::automovel(string marca, double preco, string chassi){
 	setMarca(marca);
 	setPreco(preco);
 	setChassi(chassi);
@@ -27,7 +27,7 @@ automovel::automovel(string marca, float preco, string chassi){
 string automovel::getMarca(){
 	return marca;
 }
-float automovel::getPreco(){
+double automovel::getPreco(){
 	return preco;
 }
 

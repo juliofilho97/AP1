@@ -12,15 +12,14 @@
 #include "automovel.h"
 #include "concessionaria.h"
 
-enum statusConc
-{
+enum statusConc{
 	inexistente = 0,
 	existe = 1,
 	carroCadastrado = 2
 };
 
-class gerenciar
-{
+class gerenciar{
+	
 private: 
 	vector <concessionaria> listaLoja;
 

@@ -13,8 +13,8 @@
 using namespace std;
 
 
-class concessionaria
-{
+class concessionaria{
+
 private:
 	string nome;
 	int cnpj;
@@ -34,9 +34,9 @@ public:
 	concessionaria (string nome, int cnpj, const vector <automovel> listaConc);
 
 	string get_nome();
-	void set_nome(string nome_){ nome = nome_; }
+	void set_nome(string nome_){nome = nome_; }
 	int get_cnpj();
-	int set_cnpj(int cnpj_){ cnpj = cnpj_;}
+	int set_cnpj(int cnpj_){cnpj = cnpj_;}
 
 	bool add_carro();
 
@@ -48,4 +48,5 @@ public:
 	}
 
 };
+
 #endif 

@@ -13,6 +13,7 @@ using namespace std;
 gerenciar::gerenciar(){
 	listaLoja = {}; 
 }
+
 gerenciar::~gerenciar(){
 	
 }
@@ -22,42 +23,38 @@ concessionaria gerenciar::criarconcessionaria (){
 	int cnpj;
 	vector <automovel> listaConc;
 	
-	cout << endl << "Informe o nome da concessionaria : ";
-	getline(cin, nome);
+	cout << "Informe o nome da concessionaria: ";
+	getline(cin,nome);
 
-	cout << endl<< "Informe o CNPJ da concessionaria : ";
-	cin >> cnpj; //cnpj = get_int();
+	cout << endl<< "Informe o CNPJ da concessionaria: ";
+	cin >> cnpj; 
 
 	concessionaria novaConc = concessionaria(nome,cnpj,listaConc);
 	statusConc status = inexistente;
 
 	for ( int i = 0; i < listaLoja.size(); ++i){
-		if (listaLoja[i] == novaConc)
-		{
-			cout << endl << "concessionaria existente. tente outra vez";
+		if (listaLoja[i] == novaConc){
+			cout << endl << "Concessionaria existente. Tente outra vez";
 			status = existe;
 		}
-
 	}
-	if (status == inexistente)
-		{
+
+	if (status == inexistente){
 			listaLoja.push_back(novaConc);
-			cout<< endl << "concessionaria inaugurada"<< endl;
+			cout<< endl << "Concessionaria Inaugurada."<< endl;
+	}
 
-		}
 	return novaConc;
-
 
 }
 
 
 void gerenciar::cadastrarCarro(){
 
-	cout << endl << "Deseja cadastrar o carro em qual concessionaria? " <<endl<< "concessionarias:" << endl << endl;
+	cout << endl << "Deseja cadastrar o carro em qual concessionaria? " <<endl<< "Concessionarias:" << endl << endl;
 
 
-	for ( int i = 0; i < listaLoja.size(); ++i)
-	{
+	for (int i = 0; i < listaLoja.size(); ++i){
 		cout << listaLoja[i].get_nome() << endl;
 	}
 
@@ -66,25 +63,21 @@ void gerenciar::cadastrarCarro(){
 	getline(cin,nome);
 	statusConc status = inexistente;
 
-	for ( int i = 0; i < listaLoja.size(); ++i)
-	{
-		if ( listaLoja[i].get_nome() == nome){
+	for (int i = 0; i < listaLoja.size(); ++i){
+		if (listaLoja[i].get_nome() == nome){
 			status = existe;
-			if (listaLoja[i].add_carro())
-			{
+			if (listaLoja[i].add_carro()){
 				status = carroCadastrado;
 			} 
 		}
 	}
-	if (status == inexistente)
-	{
-		cout << endl << " concessionaria nao encontrada tente novamente." << endl;
+	if (status == inexistente){
+		cout << endl << "Concessionaria nao encontrada. Tente novamente." << endl;
 	} 
-	else if (status == carroCadastrado)
-	{
+	else if (status == carroCadastrado){
 		cout << endl << "Carro cadastrado." << endl;
 	} 
-	else {
+	else{
 		cout << endl << "Carro ja cadastrado." << endl;
 	}
 	return;
@@ -92,24 +85,24 @@ void gerenciar::cadastrarCarro(){
 
 bool gerenciar::estoques (){
 
-	cout << endl << "estoque de qual concessionaria quer acessar? " << endl<< "concessionarias:" <<endl << endl;
+	cout << endl << "Estoque de qual concessionaria quer acessar? " << endl << "Concessionarias:" << endl << endl;
 			  
-	for ( int i = 0; i < listaLoja.size(); ++i)
-	{
+	for ( int i = 0; i < listaLoja.size(); ++i){
 		cout << listaLoja[i].get_nome() << endl;
 	}
+
 	cout << endl << "Digite a concessionaria: ";
 	string nome;
 	getline(cin,nome);
-	for ( int i = 0; i < listaLoja.size(); ++i)
-	{
-		if ( listaLoja[i].get_nome() == nome){
+
+	for ( int i = 0; i < listaLoja.size(); ++i){
+		if (listaLoja[i].get_nome() == nome){
 			cout << endl << " O estoque da " << nome << " possui: "<< endl;
 			//cout << listaLoja[i]; (Implementar a sobrecarga do operador <<)
 			return true;
 		}
 	}
-	cout << endl << " concessionaria nao encontrada tente novamente." << endl;
+	cout << endl << "Concessionaria nao encontrada. Tente novamente." << endl;
 	return false;
 }
 
