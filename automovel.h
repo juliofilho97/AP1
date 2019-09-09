@@ -1,11 +1,16 @@
+#define _GLIBCXX_USE_CXX11_ABI 0
 #ifndef AUTOMOVEL_H
 #define AUTOMOVEL_H
+
+
 
 #include <iostream>
 #include <vector>
 #include <string>
 #include <iterator>
 #include <algorithm>
+
+
 
 using namespace std;
 
@@ -22,31 +27,18 @@ class automovel{
 
 		automovel();
 		automovel(string marca, double preco, string chassi);
+		~automovel();
 
-		string getMarca(); 
-		string setMarca(string marca_){
-			marca = marca_;
-			return marca; 
-		}
-		double getPreco(); 
-		double setPreco(double preco_){
-			preco = preco_; 
-			return preco;
-		}
-
+		string getMarca();
+		string setMarca(string marca_); 
+		double getPreco();
+		double setPreco(double preco_); 
 		string getChassi();
-		string setChassi(string chassi_){
-			chassi = chassi_;
-			return chassi; 
-		}
+		string setChassi(string chassi_);
 
-		bool operator==(automovel a){
-			return a.getChassi() == chassi;
-		}
+		friend ostream& operator << (ostream &o, automovel &veiculo);
 
-		friend ostream& operator << (ostream &o, automovel &automovel);
-
-		bool operator==(const automovel &auto) const;
+		bool operator==(const automovel &autom) const;
 
 		bool operator==(const string &marca) const;
 	

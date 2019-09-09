@@ -1,5 +1,7 @@
+#define _GLIBCXX_USE_CXX11_ABI 0
 #ifndef GERENCIAR_H
 #define GERENCIAR_H
+
 
 
 #include <iostream>
@@ -8,7 +10,6 @@
 #include <iterator>
 #include <algorithm>
 
-#include "gerenciar.h"
 #include "automovel.h"
 #include "concessionaria.h"
 
@@ -21,7 +22,7 @@ enum statusConc{
 class gerenciar{
 	
 private: 
-	vector <concessionaria> listaLoja;
+	vector <concessionaria*> listaLoja;
 
 public:
 	gerenciar();
@@ -30,7 +31,7 @@ public:
 	concessionaria criarconcessionaria();
 
 	void cadastrarCarro();
-	bool estoques ();
+	bool estoques();
 
 };
 

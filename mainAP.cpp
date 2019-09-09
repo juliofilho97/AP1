@@ -1,3 +1,4 @@
+#define _GLIBCXX_USE_CXX11_ABI 0
 #include <iostream>
 #include <vector>
 #include <string>
@@ -14,7 +15,7 @@ gerenciar listaConc;
 int automovel::numeroCarros = 0;
 int concessionaria::numeroConc = 0;
 
-int main (){
+int main (int argc, char const *argv[]){
 	int x = -1;
 	while (x!= 0){
 		cout << endl << "++++++++++++++++++++++++++++++++"<<endl

@@ -1,3 +1,4 @@
+#define _GLIBCXX_USE_CXX11_ABI 0
 #ifndef CONCESSIONARIA_H
 #define CONCESSIONARIA_H
 
@@ -7,8 +8,9 @@
 #include<iterator>
 #include<algorithm>
 
+
 #include "automovel.h"
-#include "concessionaria.h"
+
 
 using namespace std;
 
@@ -18,46 +20,35 @@ class concessionaria{
 private:
 	string nome;
 	int cnpj;
-	vector<automovel> listaConc;
+	vector<automovel*> listaConc;
 
 
 public:
 	static int numeroConc;
 
 	//construtor
-	concessionaria ();
+	concessionaria();
 
 	// destrutor
-	~concessionaria ();
+	~concessionaria();
 
 
-	concessionaria (string nome, int cnpj, const vector <automovel> listaConc);
+	concessionaria(string nome_, int cnpj_, const vector<automovel*>lista_);
 
 	string get_nome();
-	void set_nome(string nome_){
-		nome = nome_;
-		return nome; 
-	}
-
 	int get_cnpj();
-	int set_cnpj(int cnpj_){
-		cnpj = cnpj_;
-		return cnpj; 
-	}
+	
 
 	bool add_carro();
-
 	bool lista_carro();
-
 	int estoque();
 	bool operator==(concessionaria a){
 		return a.get_cnpj() == cnpj;
 	}
 
 
-
-		friend ostream& operator<< (ostream &o, concessionaria &concessionaria);
-		bool operator==(const concessionaria &conc) const;
+	friend ostream& operator<< (ostream &o, concessionaria &concessionaria);
+	bool operator==(const concessionaria &conc) const;
 
 
 };

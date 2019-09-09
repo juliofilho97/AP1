@@ -1,3 +1,4 @@
+#define _GLIBCXX_USE_CXX11_ABI 0
 #include <iostream>
 #include <vector>
 #include <string>
@@ -14,10 +15,11 @@ concessionaria::concessionaria(){
 
 }
 
-concessionaria::concessionaria(string nome, int cnpj, const vector< automovel>listaConc){
-	set_nome(nome);
-	set_cnpj(cnpj);
-	++numeroConc;
+concessionaria::concessionaria(string nome_, int cnpj_, const vector<automovel*>lista_){
+	nome = nome_;
+	cnpj = cnpj_;
+	listaConc = lista_;
+	++(++numeroConc);
 }
 
 concessionaria::~concessionaria(){
@@ -27,11 +29,17 @@ concessionaria::~concessionaria(){
 
 
 string concessionaria::get_nome(){
-	return nome;
+	string nome_;
+
+	nome = nome_;
+	return nome; 
 }
 
 int concessionaria::get_cnpj(){
-	return cnpj;
+	int cnpj_;
+
+	cnpj = cnpj_;
+	return cnpj; 
 }
 
 
@@ -44,7 +52,7 @@ bool concessionaria::add_carro(){
 	cout << endl << "-> Digite os dados do carro";
 
 	cout << endl << "Numero do Chassi: ";
-	getline(cin, chassi);
+	getline(cin,chassi);
 
 	cout << endl << "Marca: ";
 	getline(cin,marca);
@@ -54,16 +62,16 @@ bool concessionaria::add_carro(){
 
 
 	// Ira conferir apenas o chassi pois o chassi é como se fosse o cpf do carro, é unico
-	automovel auto = automovel(marca, preco, chassi);
+	automovel *autom = new automovel(marca, preco, chassi);
 
-	for (int i = 0; i < listaConc.size(); i++){
-		if (listaConc[i] == auto){
+	for (vector<automovel*>::iterator it = listaConc.begin(); it != listaConc.end(); ++it){
+		if (**it == *autom){
 			cout << endl << "Carro ja cadastrado. Operacao CANCELADA!" << endl;
 			return false;	
 		}
 	}
 
-	listaConc.push_back(auto);
+	listaConc.push_back(autom);
 
 	return true;
 }
@@ -74,10 +82,10 @@ int concessionaria::estoque(){
 }
 
 
-std::ostream& operator<< (std::ostream &o, concessionaria &concessionaria){
-	for (std::vector<automovel>::iterator i = concessionaria.listaConc.begin(); i != concessionaria.listaConc.end(); ++i)
+   ostream& operator<<(ostream &o, concessionaria &concessionaria){
+	for (vector<automovel*>::iterator i = concessionaria.listaConc.begin(); i != concessionaria.listaConc.end(); ++i)
 	{
-		o << (i) << std::endl;
+		o << (**i) << endl;
 	}
 	return o;
 }
