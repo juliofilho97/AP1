@@ -29,14 +29,11 @@ concessionaria::~concessionaria(){
 
 
 string concessionaria::get_nome(){
-	string nome_;
-
-	nome = nome_;
 	return nome; 
 }
 
 int concessionaria::get_cnpj(){
-	int cnpj_;
+	int cnpj_ = 0;
 
 	cnpj = cnpj_;
 	return cnpj; 
@@ -75,6 +72,17 @@ bool concessionaria::add_carro(){
 
 	return true;
 }
+/*void concessionaria::alterarvalor(float per_cento){
+
+
+	salario += salario*(per_cento/100);
+
+	for (vector<automovel*>::iterator i = listaConc.begin(); i != listaConc.end(); ++i)
+	{
+		(**i).change_salario(per_cento);
+	}
+}
+*/
 
 
 int concessionaria::estoque(){

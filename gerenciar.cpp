@@ -28,12 +28,15 @@ concessionaria gerenciar::criarconcessionaria(){
 
 	
 	cout << "Informe o nome da concessionaria: ";
-	getline(cin,nome);
 	cin.ignore(200,'\n');
+	getline(cin,nome);
+	//cin.ignore(200,'\n');
+	//cin >> nome;
 
 	cout << endl<< "Informe o CNPJ da concessionaria: ";
 	cin >> cnpj; 
 
+	cout << "NOME:" << nome << endl;
 	concessionaria *novaConc = new concessionaria(nome,cnpj,listaConc);
 	statusConc status = inexistente;
 
@@ -46,6 +49,7 @@ concessionaria gerenciar::criarconcessionaria(){
 
 	if (status == inexistente){
 			listaLoja.push_back(novaConc);
+			cout << listaLoja.size() << endl;
 			cout<< endl << "Concessionaria Inaugurada."<< endl;
 	}
 
