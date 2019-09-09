@@ -9,6 +9,8 @@
 #include "concessionaria.h"
 
 using namespace std;
+using std::string;
+using std::getline;
 
 gerenciar::gerenciar(){
 	listaLoja = {}; 
@@ -22,6 +24,7 @@ concessionaria gerenciar::criarconcessionaria (){
 	string nome;
 	int cnpj;
 	vector <automovel> listaConc;
+
 	
 	cout << "Informe o nome da concessionaria: ";
 	getline(cin,nome);

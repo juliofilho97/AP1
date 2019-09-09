@@ -17,16 +17,16 @@ int concessionaria::numeroConc = 0;
 int main (){
 	int x = -1;
 	while (x!= 0){
-		cout << endl << "Escolha a opção desejada"<<endl
+		cout << endl << "++++++++++++++++++++++++++++++++"<<endl
+		<< endl << "Escolha a opção desejada"<<endl
 		<< "Digite 1 - Adicionar Automóvel "<<endl
 		<< "Digite 2 - Criar Concessionária"<< endl
 		<< "Digite 3 - Lista de Automoveis"<< endl
 		<< "Digite 0 - Sair"<< endl
-		<< endl<< "Digite sua Escolha: ";
+		<< "++++++++++++++++++++++++++++++++"<<endl
+		<< endl<< "Digite sua Escolha: " <<endl;
 	
 		cin >> x; 
-
-		//ver como faz p parar de pular o cin
 
 		switch (x){
 			case 1: 

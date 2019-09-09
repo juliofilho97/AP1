@@ -24,6 +24,7 @@ automovel::automovel(string marca, double preco, string chassi){
 	++numeroCarros;
 }
 
+
 string automovel::getMarca(){
 	return marca;
 }
@@ -33,4 +34,22 @@ double automovel::getPreco(){
 
 string automovel::getChassi(){
 	return chassi;
+}
+
+
+
+bool automovel::operator==(const automovel &auto) const {
+	if (this->marca == auto.marca){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool automovel::operator==(const std::string &marca) const {
+	if (this->marca == marca){
+		return true;
+	} else {
+		return false;
+	}
 }

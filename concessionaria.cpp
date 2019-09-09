@@ -54,16 +54,16 @@ bool concessionaria::add_carro(){
 
 
 	// Ira conferir apenas o chassi pois o chassi é como se fosse o cpf do carro, é unico
-	automovel func = automovel(marca, preco, chassi);
+	automovel auto = automovel(marca, preco, chassi);
 
 	for (int i = 0; i < listaConc.size(); i++){
-		if (listaConc[i] == func){
+		if (listaConc[i] == auto){
 			cout << endl << "Carro ja cadastrado. Operacao CANCELADA!" << endl;
 			return false;	
 		}
 	}
 
-	listaConc.push_back(func);
+	listaConc.push_back(auto);
 
 	return true;
 }
@@ -73,6 +73,22 @@ int concessionaria::estoque(){
 	return listaConc.size();
 }
 
+
+std::ostream& operator<< (std::ostream &o, concessionaria &concessionaria){
+	for (std::vector<automovel>::iterator i = concessionaria.listaConc.begin(); i != concessionaria.listaConc.end(); ++i)
+	{
+		o << (i) << std::endl;
+	}
+	return o;
+}
+
+bool concessionaria::operator==(const concessionaria &conc) const{
+	if (this->nome == conc.nome){
+		return true;
+	} else {
+		return false;
+	}
+}
 
 
 
