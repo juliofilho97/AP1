@@ -1,4 +1,3 @@
-#define _GLIBCXX_USE_CXX11_ABI 0
 #include <iostream>
 #include <vector>
 #include <string>
@@ -30,8 +29,7 @@ concessionaria gerenciar::criarconcessionaria(){
 	cout << "Informe o nome da concessionaria: ";
 	cin.ignore(200,'\n');
 	getline(cin,nome);
-	//cin.ignore(200,'\n');
-	//cin >> nome;
+	
 
 	cout << endl<< "Informe o CNPJ da concessionaria: ";
 	cin >> cnpj; 
