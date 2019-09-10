@@ -3,7 +3,7 @@
 # Avaliação prática I
 
 CC = g++
-PROG = $(BIN)/AP1
+PROG = $ AP1/(BIN)
 
 OBJ = ./build
 SRC = ./src
