@@ -1,4 +1,3 @@
-#define _GLIBCXX_USE_CXX11_ABI 0
 #ifndef AUTOMOVEL_H
 #define AUTOMOVEL_H
 
