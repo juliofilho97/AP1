@@ -1,36 +1,32 @@
-# Makefile da disciplina Linguagem de Programação I
-# Alunos: Julio Cesar e Larissa Jales 
-# Avaliação prática I
+CC = g++ #compilador
 
-CC = g++
-PROG = $ AP1/(BIN)
+CPPFLAGS = -Wall -std=c++11 #flags
 
-OBJ = ./build
-SRC = ./src
-BIN = ./AP1
-INC = ./include
+#executavel
+AP1: automovel.o gerenciar.o concessionaria.o mainAP.o 
+	@$(CC) $(CPPFLAGS) -Iinclude automovel.o gerenciar.o concessionaria.o mainAP.o  -o AP1											
+		
+	@mv *.o build/ #enviando os .o para pasta objects
+	
+# o -I include diz que a biblioteca está nessa pasta
 
-CPPFLAGS = -Wall -pedantic -g -o0 -pg -std=c++11 -I$(INC)
 
-OBJS = $(OBJ)/automovel.o $(OBJ)/concessionaria.o $(OBJ)/gerenciar.o $(OBJ)/mainAP.o
+automovel.o: src/automovel.cpp
+	@$(CC) $(CPPFLAGS) -c -Iinclude src/automovel.cpp
+	@echo "Instalando..."
 
-all: $(PROG)
-	$(PROG)
+gerenciar.o: src/gerenciar.cpp
+	@$(CC) $(CPPFLAGS) -c -Iinclude src/gerenciar.cpp
+	@echo "Instalando..."
 
-$(PROG): $(OBJS)
-	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
+concessionaria.o: src/concessionaria.cpp
+	@$(CC) $(CPPFLAGS) -c -Iinclude src/concessionaria.cpp
+	@echo "Instalando..."
 
-$(OBJ)/automovel.o: $(SRC)/automovel.cpp
-	$(CC) $(CPPFLAGS) -c $(SRC)/automovel.cpp
-
-$(OBJ)/concessionaria.o: $(SRC)/concessionaria.cpp
-	$(CC) $(CPPFLAGS) -c $(SRC)/concessionaria.cpp
-
-$(OBJ)/gerenciar.o: $(SRC)/gerenciar.cpp
-	$(CC) $(CPPFLAGS) -c $(SRC)/gerenciar.cpp
-
-$(OBJ)/mainAP.o: $(SRC)/mainAP.cpp
-	$(CC) $(CPPFLAGS) -c $(SRC)/mainAP.cpp
-
-clean: 
-	rm -f $(BIN)
+mainAP.o: src/mainAP.cpp
+	@$(CC) $(CPPFLAGS) -c -Iinclude src/mainAP.cpp
+	@echo "Aguarde..."
+	@echo "Pronto!!!Para mais informações digite o comando --> ./AP1\n"
+clean:
+	@rm -rf AP1
+	@echo "Diretorio limpo"
