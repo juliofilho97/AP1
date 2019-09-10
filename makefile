@@ -1,7 +1,3 @@
-# Makefile da disciplina Linguagem de Programação I
-# Alunos: Julio Cesar e Larissa Jales 
-# Avaliação prática I
-
 CC = g++
 PROG = $(BIN)/AP1-Master
 
