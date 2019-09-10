@@ -38,6 +38,7 @@ int main (int argc, char const *argv[]){
 					break;
 			case 3:
 					listaConc.estoques();
+					break;
 			case 0:
 					cout<<endl<< "Ate mais!" << endl;
 					return 0;
