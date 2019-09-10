@@ -11,7 +11,7 @@ Passo a passo para a execução do programa:
 • Digitar o comando ./AP1 para executar
 
 Roteiro do programa 
-É apresentado um menu com as opções de cadastrar uma concessionária, listar as concessionárias e cadastrar automóvel.
+É apresentado um menu com as opções de cadastrar uma concessionária, listar as concessionárias, listar e cadastrar automóvel.
 
 
 Limitações do programa
