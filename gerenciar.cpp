@@ -1,4 +1,3 @@
-#define _GLIBCXX_USE_CXX11_ABI 0
 #include <iostream>
 #include <vector>
 #include <string>
@@ -49,7 +48,7 @@ concessionaria gerenciar::criarconcessionaria(){
 
 	if (status == inexistente){
 			listaLoja.push_back(novaConc);
-			cout << listaLoja.size() << endl;
+			
 			cout<< endl << "Concessionaria Inaugurada."<< endl;
 	}
 
@@ -69,6 +68,7 @@ void gerenciar::cadastrarCarro(){
 
 	cout << endl << "Digite a concessionaria: ";
 	string nome;
+	cin.ignore(200,'\n');
 	getline(cin,nome);
 	statusConc status = inexistente;
 
@@ -102,13 +102,13 @@ bool gerenciar::estoques(){
 
 	cout << endl << "Digite a concessionaria: ";
 	string nome;
+	cin.ignore(200,'\n');
 	getline(cin,nome);
 
 	for ( vector<concessionaria*>::iterator it = listaLoja.begin(); it != listaLoja.end(); ++it){
 		if ((**it).get_nome() == nome){
 			cout << endl << " O estoque da " << nome << " possui: "<< endl;
 			cout << (**it);
-			//cout << listaLoja[i]; (Implementar a sobrecarga do operador <<)
 			return true;
 		}
 	}

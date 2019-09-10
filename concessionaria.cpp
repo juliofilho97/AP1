@@ -1,4 +1,3 @@
-#define _GLIBCXX_USE_CXX11_ABI 0
 #include <iostream>
 #include <vector>
 #include <string>
@@ -72,10 +71,11 @@ bool concessionaria::add_carro(){
 
 	return true;
 }
-/*void concessionaria::alterarvalor(float per_cento){
+/*
+void concessionaria::alterarvalor(float per_cento){
 
 
-	salario += salario*(per_cento/100);
+	preco += preco*(per_cento/100);
 
 	for (vector<automovel*>::iterator i = listaConc.begin(); i != listaConc.end(); ++i)
 	{
