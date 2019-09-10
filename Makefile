@@ -20,17 +20,17 @@ all: $(PROG)
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
-$(OBJ)/automovel.o: $(INC)/automovel.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/automovel.cpp -o $(OBJ)/automovel.o
+$(OBJ)/automovel.o: $(SRC)/automovel.cpp
+	$(CC) $(CPPFLAGS) -c $(SRC)/automovel.cpp
 
-$(OBJ)/concessionaria.o: $(INC)/concessionaria.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/concessionaria.cpp -o $(OBJ)/concessionaria.o
+$(OBJ)/concessionaria.o: $(SRC)/concessionaria.cpp
+	$(CC) $(CPPFLAGS) -c $(SRC)/concessionaria.cpp
 
-$(OBJ)/gerenciar.o: $(SRC)/gerenciar.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/gerenciar.cpp -o $(OBJ)/mainAP.o
+$(OBJ)/gerenciar.o: $(SRC)/gerenciar.cpp
+	$(CC) $(CPPFLAGS) -c $(SRC)/gerenciar.cpp
 
 $(OBJ)/mainAP.o: $(SRC)/mainAP.cpp
-	$(CC) $(CPPFLAGS) -c $(SRC)/mainAP.cpp -o $(OBJ)/mainAP.o
+	$(CC) $(CPPFLAGS) -c $(SRC)/mainAP.cpp
 
 clean: 
 	rm -f $(BIN)
