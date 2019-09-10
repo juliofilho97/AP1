@@ -1,3 +1,4 @@
+#define _GLIBCXX_USE_CXX11_ABI 0
 #ifndef GERENCIAR_H
 #define GERENCIAR_H
 
